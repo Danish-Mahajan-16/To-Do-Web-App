@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div id="particle"></div>
+    <h1>
+      <a href="/" style="text-decoration: none; color: whitesmoke"
+        >To-Do List</a
+      >
+    </h1>
+    <div class="title">
+      <div class="dateDisplay"><h2><%=listTitle %></h2></div>
+      <a id="customListLink" href="/customLists">> Custom Lists</a>
+    </div>
+    <div class="list">
+      <h3>TASKS</h3>
+      <hr style="border: black 1.5px solid" />
+      <form id="task_create_form" class="new" action="/" method="post">
+        <input
+          name="new_task"
+          id="new_task"
+          autocomplete="off"
+          placeholder="Write a task here!"
+        />
+        <button
+          id="add_task"
+          name="submit"
+          value="<%=listTitle%>"
+          type="submit"
+        >
+          +
+        </button>
+      </form>
+      <ul id="main_list">
+        <% todos.forEach(todo => { %>
+        <form action="/delete" method="post">
+          <li class="tasks">
+            <hr />
+            <input
+              type="checkbox"
+              name="task_status"
+              value="<%=todo._id%>"
+              id="task_status"
+              onchange="this.form.submit()"
+            />
+            <p><%= todo.name %></p>
+          </li>
+          <input type="hidden" name="listName" value="<%= listTitle %>" />
+        </form>
+        <% }); %>
+      </ul>
+    </div>
+    <div class="end">
+      <footer>
+        Made by <strong>Danish Mahajan</strong><br />
+        Copyright © <%=year%>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"></script>
+    <script src="js\index.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  </body>
+</html>

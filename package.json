@@ -1,0 +1,24 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "A todo list project made using ejs, express.js, node.js, css, html and javascript",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Todo"
+  ],
+  "author": "Danish Mahajan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "particles.js": "^2.0.0",
+    "particlesjs": "^2.2.3",
+    "socket.io": "^4.7.2"
+  }
+}

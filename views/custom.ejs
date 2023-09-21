@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles\custom.css">
+    <title>Custom Lists</title>
+  </head>
+  <body>
+    <div id="particle"></div>
+    <h1><a href="/" style="text-decoration: none;color:whitesmoke;">To-Do List</a></h1>
+    <h2>Custom Lists</h2>
+    <div class="new-list">
+      <form action="/newList" method="post">
+        <input type="text" name="newList" placeholder="Create a new list!">
+        <button id="add_list" type="submit">+</button>
+      </form>
+    </div>
+    <div class="existing-list">
+      <% lists.forEach(list => { %>
+        <%if(list.name !== "favicon.ico"){ %>
+          <ul>
+            <li><h3><a href="/<%=list.name%>"><%=list.name%></a></h3></li>
+          </ul>
+        <%};%>
+      <% }); %>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"></script>
+    <script src="js\custom.js"></script>
+  </body>
+</html>

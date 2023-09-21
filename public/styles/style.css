@@ -1,0 +1,174 @@
+/* *,
+*::before,
+*::after{
+  margin:0;
+  padding:0;
+} */
+html{
+  margin:0;
+  padding:0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  /* justify-content:center; */
+  flex-direction: column;
+  text-align:center;
+  color:whitesmoke;
+  background-color: black;
+  /* background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%); */
+  font-family: 'Poppins', sans-serif;
+  background-repeat:repeat;
+  z-index:1;
+}
+
+h1{
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+}
+
+.title{
+  z-index:1;
+  margin-bottom: 2rem;
+}
+
+.dateDisplay{
+  display: inline-block;
+  margin-right: 1rem;
+  
+}
+
+h1::after,h2::after,#customListLink::after{
+  content:"";
+  display:block;
+  height:4px;
+  width:100%;
+  background-color: whitesmoke;
+  transform:scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+h1:hover::after,h2:hover::after{
+  transform:scaleX(1);
+}
+
+.list{
+    color:black;
+    
+    width:70%;
+    background-color:whitesmoke;
+    border-radius:20px;
+    font-size:1.1rem;
+    z-index: 1;
+    margin-bottom:5rem;
+    padding-bottom:0.6rem;
+    text-align:center;
+    overflow:visible;
+}
+
+ul {
+  display:flex;
+  flex-direction:column;
+  list-style-type: none;    
+  margin: 0;
+  padding: 0;
+  text-align:justify;
+}
+
+li p{
+  margin: 0.5rem 0;
+}
+
+
+
+#task_create_form{
+  display:flex;
+}
+
+p{
+  display:inline-block;
+}
+
+#particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Place the particle div below other content */
+  background-color: black; /* Set a fallback background color */
+}
+
+
+*::selection{
+  color:black;
+  background-color:whitesmoke;
+}
+
+.list h3::selection, .list li::selection{
+  color:whitesmoke;
+  background-color:black;
+}
+
+#add_task{
+  color:whitesmoke;
+  background-color:black;
+  font-size:2rem;
+  padding: 0.8rem 1.35rem;
+  border-radius: 50%;
+  cursor:pointer;
+  transition: transform 0.3s ease;
+  border:none;
+}
+
+#add_task:hover{
+  transform: scale(1.15);
+}
+
+#new_task{
+  padding-top: 0px;
+  width:80%;
+  height: 3rem;
+  border: none;
+  background-color: whitesmoke;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+}
+
+#new_task:focus{
+  outline:none;
+}
+
+#customListLink{
+  position: absolute;
+  top:1.5rem;
+  left:1rem;
+  color:whitesmoke;
+  text-decoration: none;
+  transition: ease 0.3s;
+}
+
+#customListLink:hover{
+  transform: scale(1.1);
+}
+
+#customListLink::after{
+  transform: scaleX(1);
+}
+
+#customListLink:hover::after{
+  transform: scaleX(0);
+}
+
+.completed-task {
+  text-decoration: line-through;
+}
+
+.end{
+  margin-top: 5.5rem;
+  z-index:1;
+}
